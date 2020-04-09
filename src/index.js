@@ -4,10 +4,11 @@ import './index.css';
 import CardList from './CardList';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CardList />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
