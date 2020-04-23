@@ -36,10 +36,6 @@ class App extends Component {
       });
   }
 
-  onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value });
-  };
-
   render() {
     const { robots } = this.state;
     const { searchField, onSearchChange } = this.props;
@@ -61,5 +57,5 @@ class App extends Component {
     );
   }
 }
-//higher order function
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
