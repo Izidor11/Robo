@@ -16,8 +16,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  onSearchChange: (event) => dispatch(setSearchField(event.target.value));
-  }
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+  };
 };
 
 class App extends Component {
@@ -36,9 +36,13 @@ class App extends Component {
       });
   }
 
+  onSearchChange = (event) => {
+    this.setState({ searchfield: event.target.value });
+  };
+
   render() {
     const { robots } = this.state;
-    const {searchField, onSearchChange} = this.props;
+    const { searchField, onSearchChange } = this.props;
     const filteredRobots = robots.filter((robot) => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
     });
