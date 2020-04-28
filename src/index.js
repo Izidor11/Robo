@@ -12,10 +12,7 @@ import App from './containers/App';
 
 const logger = createLogger();
 const rootReducer = combineReducers({ searchRobots, requestRobots });
-const store = createStore(
-  rootReducer,
-  applyMiddleware(thunkMiddleware, logger)
-);
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 ReactDOM.render(
   <React.StrictMode>
